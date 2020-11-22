@@ -1,0 +1,133 @@
+.Container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.Container .description {
+  width: 75%;
+  padding: 20px;
+}
+
+.Container .SaveChanges {
+  margin-top: 20px;
+  display: none;
+}
+
+.Container .SaveChanges.Active {
+  display: block;
+}
+.Container .SaveChanges button {
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: var(--first);
+  border: 2px solid var(--first);
+  color: white;
+}
+.Profile {
+  margin: auto;
+}
+.Profile .Detail {
+  padding: 20px;
+  border-bottom: 2px solid var(--third);
+}
+
+.Profile .Detail .Item {
+  padding: 10px;
+  color: white;
+  background: var(--first);
+  margin-right: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.Profile .Detail .Value {
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--first);
+  background: var(--third);
+  margin-right: 10px;
+  border-radius: 6px;
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.Choices {
+  margin-top: 20px;
+  display: none;
+}
+.Choices.Active {
+  display: block;
+}
+
+.Choices .TagChoice {
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: 0.1s ease;
+}
+.Choices .TagChoice:hover {
+  background-color: var(--first);
+  border: 2px solid var(--first);
+}
+
+.AddTag {
+  display: inline-block;
+  margin-top: 20px;
+  border: 2px solid var(--first);
+  color: var(--third);
+  padding: 5px;
+  background: var(--first);
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.EditTag {
+  display: inline-block;
+  border: 2px solid var(--first);
+  color: var(--third);
+  padding: 5px;
+  background: var(--first);
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.cross {
+  position: absolute;
+  color: white;
+  bottom: 101%;
+  font-size: 15px;
+  cursor: pointer;
+  display: none;
+}
+.Notification {
+  padding: 15px;
+  background: var(--first);
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  padding: 15px;
+  background: rgb(199, 32, 32);
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}

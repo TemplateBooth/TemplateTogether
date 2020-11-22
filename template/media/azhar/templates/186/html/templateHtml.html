@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Animated Nav</title>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet"/>
+<link href="css/animatednav.css" rel="stylesheet"/>
+<link href="http://localhost:8002/media/azhar/templates/186/css/templateCss.css" rel="stylesheet"/></head>
+<body>
+<nav class="top-nav d-flex">
+<div class="logo-link d-flex align-items-center">
+<img height="75px" src="img/human.png" width="70px"/>
+</div>
+<div class="nav-links h-100 align-items-center justify-content-center">
+<div class="nav-item">
+<a class="active" href="#">INTRODUCTION</a>
+</div>
+<div class="nav-item">
+<a href="#">THE TECHNOLOGY</a>
+</div>
+<div class="nav-item">
+<a href="#">TECH SPOTLIGHT</a>
+</div>
+<div class="nav-item">
+<a href="#">WHY MUSIC</a>
+</div>
+</div>
+<div class="toggle-link h-100 align-items-center justify-content-center d-flex">
+<div class="toggler" onclick="openNav()">
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+</div>
+</div>
+</nav>
+<div class="overlay-nav container-fluid">
+<div class="overlay-links d-flex flex-column align-items-center">
+<div class="link-item active animate__animated animate__fadeInDown animate__delay-1s">
+<a href="#">INTRODUCING FEED</a>
+</div>
+<div class="link-item">
+<a href="#">FEED APP</a>
+</div>
+<div class="link-item">
+<a href="#">MEET THE TEAM</a>
+</div>
+<div class="link-item">
+<a href="#">SCHEDULE A MEETING</a>
+</div>
+<div class="link-item">
+<a href="#">SEE THE LIVE PROTOTYPE</a>
+</div>
+</div>
+</div>
+<div class="container-fluid image-container bg-dark p-0">
+<video autoplay=" class="bg-light" loop=">
+<source src="img/anim1_video.mp4" type="video/mp4"/>
+</video>
+</div>
+<script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="js/animatednav.js"></script>
+<script src="http://localhost:8002/media/azhar/templates/186/js/templateJs.js"></script></body>
+</html>

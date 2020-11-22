@@ -1,0 +1,225 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "PhilosopherRegular";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.stylish-container {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  width: 100%;
+}
+.stylish-container .heading1 {
+  text-align: center;
+}
+.stylish-container .heading2 {
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0.3em;
+  color: #ad8a35;
+  font-weight: 400;
+}
+.stylish-container .left-design {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-image: url("/img/sprite.png");
+  width: 92px;
+  height: 88px;
+  background-position: -10px -476px;
+}
+.stylish-container .right-design {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-image: url("/img/sprite.png");
+  width: 92px;
+  height: 88px;
+  background-position: -10px -593px;
+}
+
+.wed-banner1 .inner-container {
+  overflow: hidden;
+  background: url("/img/mohey_bg.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 767px) {
+  .wed-banner1 .inner-container {
+    background-size: cover;
+  }
+}
+.wed-banner1 .inner-container > [class*="col-"] {
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+.img-container img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+
+.wed-banner1 .inner-container .img-container .top-style {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+}
+.wed-banner1 .inner-container .img-container .top-style::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  background-image: url("/img/tl_strip.png");
+  width: 15px;
+  height: 15px;
+}
+.wed-banner1 .inner-container .img-container .top-style::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  background-image: url("/img/tr_strip.png");
+  width: 15px;
+  height: 15px;
+}
+
+.wed-banner1 .inner-container .img-container .bottom-style {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.wed-banner1 .inner-container .img-container .bottom-style::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  background-image: url("/img/bl_strip.png");
+  width: 15px;
+  height: 15px;
+}
+.wed-banner1 .inner-container .img-container .bottom-style::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  background-image: url("/img/br_strip.png");
+  width: 15px;
+  height: 15px;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url("/img/img_overlay-shadow2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  font-weight: 0;
+}
+
+.overlay-content .text-box {
+  position: absolute;
+  bottom: 2%;
+  text-align: center;
+  width: 100%;
+  padding: 25px;
+}
+.img-container:hover > .overlay-content .text-box .text {
+  color: #e5c579;
+}
+.img-container:hover > img {
+  transform: scale(1.04);
+}
+.img-container:hover .collection-btn {
+  color: #e5c579;
+  background-color: #891d20;
+}
+.img-container:hover .collection-btn::before {
+  border-right-color: #891d20;
+}
+.img-container:hover .collection-btn::after {
+  border-left-color: #891d20;
+}
+.overlay-content .text-box .text {
+  position: relative;
+  color: white;
+  transition: 0.3s ease;
+}
+.overlay-content .text-box .text::before {
+  position: absolute;
+  content: "";
+  background-image: url("/img/sprite.png");
+  left: -30px;
+  background-position: -76px -51px;
+  width: 17px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.overlay-content .text-box .text::after {
+  position: absolute;
+  content: "";
+  background-image: url("/img/sprite.png");
+  right: -30px;
+  background-position: -76px -73px;
+  width: 17px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.overlay-content .text-box .main-heading {
+  font-size: 56px;
+  color: #e5c579;
+  font-family: "Pinyon Script", cursive;
+  line-height: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.collection-btn {
+  background: #f2c452;
+  color: #5a1216;
+  font-size: 12px;
+  display: inline-block;
+  width: 140px;
+  height: 34px;
+  line-height: 32px;
+  position: relative;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.collection-btn::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: transparent #f2c452 transparent transparent;
+  border-width: 17px 17px 17px 0;
+  left: -17px;
+  transition: 0.3s ease;
+}
+.collection-btn::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent transparent #f2c452;
+  border-width: 17px 0px 17px 17px;
+  right: -17px;
+  transition: 0.3s ease;
+}

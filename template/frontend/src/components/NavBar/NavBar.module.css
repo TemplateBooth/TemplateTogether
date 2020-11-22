@@ -1,0 +1,40 @@
+.Navbar {
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  height: 70px;
+  width: 100%;
+  background: var(--first);
+}
+.Navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+  padding: 0px;
+}
+.Navbar ul li:not(:last-child) {
+  margin-right: 15px;
+}
+.Navbar ul a {
+  padding: 5px 10px;
+  font-size: 20px;
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+  color: var(--third);
+  background: var(--second);
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid var(--third);
+  transition: border 0.1s ease-in-out;
+}
+
+.Navbar ul a:hover {
+  border: 2px solid white;
+}
+
+.Navbar ul a.active {
+  background: var(--first) !important;
+}

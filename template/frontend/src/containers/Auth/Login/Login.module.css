@@ -1,0 +1,67 @@
+.FormContainer {
+  width: 50%;
+  margin: auto;
+  margin-top: 0px;
+  padding: 30px;
+}
+.FormContainer label {
+  color: var(--third);
+}
+.Heading {
+  text-align: center;
+  font-size: 40px;
+
+  padding: 10px;
+  color: var(--third);
+}
+.Button {
+  background: var(--first);
+  color: white;
+}
+.Button:hover {
+  background-color: var(--third);
+  color: var(--first);
+}
+
+.NotificationContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 244, 238, 0.605);
+  z-index: 8;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.5s ease-in-out;
+}
+.NotificationContainer.Active {
+  transform: translateY(0%);
+}
+.NotificationContainer .cross {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 38px;
+}
+.Notification {
+  padding: 15px;
+  background: var(--second);
+  color: white;
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  padding: 15px;
+  background: rgb(199, 78, 78);
+  color: white;
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}

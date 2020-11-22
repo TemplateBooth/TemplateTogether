@@ -1,0 +1,386 @@
+:root{
+--color_1:#000000;
+--color_2:#ffffff;
+--color_3:#000000cc;
+--color_4:#f5f5f7;
+--color_5:#1571e3;
+--color_6:#131313;
+--color_7:#676666;
+--color_8:#2997ff;
+--color_9:#fafafa;
+--color_10:#f0f0f2;
+
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 44px;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 44px;
+
+  color: var(--color_2);
+  background: var(--color_3);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 999;
+}
+
+.nav-container {
+  height: 44px;
+  margin: 0px auto;
+  max-width: 980px;
+}
+
+.nav-container .links-container {
+  height: 44px;
+
+  display: flex;
+  list-style: none;
+  padding: 0px 10px;
+
+  justify-content: space-between;
+}
+
+.nav-container .links-container li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-container .links-container a {
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  color: var(--color_2);
+  padding: 0px 10px;
+  position: relative;
+  text-decoration: none;
+  color: var(--color_4);
+  opacity: 0.8;
+}
+
+.apple-logo {
+  background-image: url(/img/apple1.svg);
+  width: 16px;
+  background-size: 16px 44px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+
+.search-logo {
+  background-image: url(/img//apple3.svg);
+  width: 18px;
+  background-size: 18px 88px;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+
+.bag-logo {
+  background-image: url(/img/apple2.svg);
+  width: 17px;
+  background-size: 17px 44px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+
+/*end*/
+
+.not-1 {
+  background-color: var(--color_5);
+  color: var(--color_2);
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+.not-2 {
+  background-color: var(--color_2);
+  color: var(--color_6);
+  font-size: 14px;
+  padding: 10px 0px;
+}
+/*banner1 */
+
+.banner1 {
+  background: var(--color_6);
+}
+
+.banner1 .img-column {
+  background-image: url(/img/apple4.jpg);
+  width: 1156px;
+  height: 270px;
+  background-size: 1156px 470px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner1 .img-column {
+    width: 796px;
+    height: 275px;
+    background-size: 796px 535px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner1 .img-column {
+    width: 346px;
+    height: 326px;
+    background-size: 346px 326px;
+    background-repeat: no-repeat;
+    background-image: url(/img/apple5.jpg);
+  }
+}
+
+.main-heading {
+  font-size: 55px;
+  line-height: 1.2em;
+  color: var(--color_2);
+  font-weight: 500;
+}
+.heading {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--color_2);
+  line-height: 1.1em;
+}
+.sub-heading {
+  font-size: 17px;
+  color: var(--color_7);
+}
+.options a {
+  color: var(--color_8);
+}
+
+/*end*/
+
+.banner2 {
+  background-color: var(--color_9);
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+}
+
+.banner2 .row {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: 2;
+}
+.banner2 .absolute-img {
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  right: 0px;
+  background-image: url(/img/apple7.jpg);
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background-size: ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner2 {
+    height: 580px;
+  }
+  .banner2 .absolute-img {
+    height: 380px;
+    background-size: 1700px 380px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner2 {
+    height: 400px;
+  }
+  .banner2 .absolute-img {
+    top: 200px;
+    height: 200px;
+    background-size: 1000px 200px;
+  }
+}
+
+/*banner 3*/
+
+.banner3 {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  background-color: var(--color_9);
+}
+
+.banner3 .row {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: 2;
+}
+.banner3 .absolute-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url(/img/apple6.jpg);
+  width: 100%;
+  height: 600px;
+  z-index: 1;
+  background-size: 3000px 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner3 {
+    height: 500px;
+  }
+  .banner3 .absolute-img {
+    top: 200px;
+    height: 300px;
+    background-size: 1300px 300px;
+  }
+}
+
+/*banner 4*/
+
+.banner4 .layout-container {
+  background-color: var(--color_10);
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner4 .text-container {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  z-index: 2;
+}
+.banner4 .main-heading {
+  font-size: 40px;
+}
+.banner4 .heading {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.banner4 .first {
+}
+.banner4 .first .absolute-img {
+  position: absolute;
+  bottom: 30px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/img/apple8.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+.banner4 .second .layout-container {
+  background-color: var(--color_9);
+}
+
+.banner4 .second .absolute-img {
+  position: absolute;
+  bottom: 0px;
+  height: 400px;
+  width: 100%;
+  background-image: url(/img/apple9.jpg);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+}
+.banner4 .third .absolute-img {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/img/apple10.jpg);
+  background-repeat: no-repeat;
+  background-size: 1000px 600px;
+  background-position: bottom;
+}
+.banner4 .fourth .absolute-img {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/img/apple11.jpg);
+  background-repeat: no-repeat;
+  background-size: 1400px 600px;
+  background-position: bottom;
+}
+.banner4 .fifth .absolute-img {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/img/apple12.jpg);
+  background-repeat: no-repeat;
+  background-size: 1400px 600px;
+  background-position: bottom;
+}
+.banner4 .sixth .absolute-img {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/img/apple13.jpg);
+  background-repeat: no-repeat;
+  background-size: 1400px 600px;
+  background-position: bottom;
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner4 .layout-container {
+    height: 500px;
+  }
+
+  .banner4 .first .absolute-img {
+    bottom: initial;
+    top: -50px;
+  }
+
+  .bottom4 .second .absolute-img {
+    bottom: initial;
+    top: 200px;
+  }
+
+  .banner4 .main-heading {
+    font-size: 30px;
+  }
+  .banner4 .heading {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner4 .first .absolute-img {
+    bottom: initial;
+    top: 100px;
+    background-position: center;
+  }
+
+  .banner4 .second .absolute-img {
+    bottom: initial;
+    top: 150px;
+    height: 400px;
+    background-position: center;
+  }
+}

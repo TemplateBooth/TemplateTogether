@@ -1,0 +1,37 @@
+/*background fixed*/
+.background-fixed-container {
+  background-image: url("../img/graduation.jpg");
+  background-attachment: fixed;
+  height: 1000px;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+.background-fixed-container .fixed-content {
+  background-color: #7cbb0e;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fixed-content .fixed-header {
+  font-size: 40px;
+  line-height: 0.9em;
+}
+
+@media only screen and (max-width: 767px) {
+  .fixed-content .fixed-header {
+    font-size: 20px;
+    line-height: 1em;
+  }
+}
+.fixed-content .fixed-text {
+}
+button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+}
+/*end*/

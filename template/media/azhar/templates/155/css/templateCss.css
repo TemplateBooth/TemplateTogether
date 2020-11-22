@@ -1,0 +1,19 @@
+:root{
+--color_1:#706d6d;
+--color_2:#9ceade;
+--color_3:#00004400;
+--color_4:#4169e1;
+
+}
+
+    :root {
+    }
+
+    .ff {
+      color: var(--color_3)
+    ;}
+  
+
+    .sfdfdgP {
+      background-color: var(--color_4);
+    }

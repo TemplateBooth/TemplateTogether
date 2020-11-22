@@ -1,0 +1,104 @@
+.container {
+    width: 100%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+  }
+  
+  figure {
+    width: 135px;
+    height: 135px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    position: relative;
+    padding: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: rgba(42, 100, 110, 0.8);
+  }
+  .containerChild1 {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerChild1 h1 {
+    padding: 40px;
+  }
+  .containerChild2 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #d1,
+  #d2,
+  #d3 {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 30%;
+    height: 400px;
+    font-family: sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #d1.highlight,
+  #d2.highlight,
+  #d3.highlight {
+    border-color: #6ccaf3;
+  }
+  
+  p {
+    padding: 20px;
+  }
+  .myForm {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px;
+    background: #3c6a7e;
+    cursor: pointer;
+    border-radius: 5px;
+    /* border: 1px solid rgb(81, 120, 152); */
+  }
+  .button:hover {
+    background: rgb(8, 42, 73);
+  }
+  
+  #htmlFile,
+  #cssFile,
+  #jsFile {
+    display: none;
+  }
+  #upload-span {
+    font-size: 15px;
+    padding: 20px;
+  }
+  

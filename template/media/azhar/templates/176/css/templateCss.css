@@ -1,0 +1,162 @@
+:root{
+--color_1:#000000;
+--color_2:#ffffff;
+--color_3:#000000cc;
+--color_4:#f5f5f7;
+--color_5:#1571e3;
+--color_6:#131313;
+--color_7:#676666;
+--color_8:#2997ff;
+--color_9:#fafafa;
+--color_10:#f0f0f2;
+--color_11:#eee5e5b2;
+--color_12:#7cbb0e;
+--color_13:#00000099;
+
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  box-shadow: inset var(--color_11);
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.floating-banner > .row {
+  position: relative;
+  height: 1100px;
+}
+
+.floating-banner {
+}
+
+.floating-banner .first-col {
+  position: absolute;
+  left: 0px;
+  background-color: var(--color_12);
+  margin-left: 70px;
+  z-index: 2;
+}
+
+.floating-banner .main-heading {
+  color: var(--color_2);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+.floating-banner .sub-heading {
+  color: var(--color_2);
+
+  font-weight: 300;
+}
+
+.floating-banner .footer a {
+  color: var(--color_2);
+  font-size: 30px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.floating-banner .second-col {
+  position: absolute;
+  right: 70px;
+  height: 700px;
+}
+.floating-banner .second-col .inner-container {
+  height: 100%;
+  position: relative;
+  background-image: url("/img/apple5.jpg");
+  background-size: 100% 100%;
+}
+
+.floating-banner .third-col {
+  position: absolute;
+  left: 80px;
+  bottom: 0px;
+  height: 500px;
+  z-index: 3;
+}
+.floating-banner .third-col .inner-container {
+  height: 100%;
+  position: relative;
+  background-image: url("/img/5.jpg");
+  background-size: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  .floating-banner .first-col {
+    box-shadow: 0 40px 120px -20px var(--color_13);
+  }
+  .floating-banner .row [class*="col-"] .inner-container {
+    box-shadow: 0 40px 120px -20px var(--color_13);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .floating-banner .first-col {
+    margin-left: 30px;
+  }
+  .floating-banner .second-col {
+    right: 30px;
+  }
+  .floating-banner .third-col {
+    bottom: -100px;
+  }
+}
+
+/*small*/
+@media only screen and (max-width: 767px) {
+  .floating-banner > .row {
+    height: initial;
+  }
+  .floating-banner .first-col {
+    position: relative;
+    margin-left: 0px;
+    z-index: 1;
+  }
+
+  .floating-banner .second-col {
+    position: relative;
+    right: 0px;
+    height: 400px;
+  }
+  .floating-banner .third-col {
+    position: relative;
+    right: 0px;
+    left: 0px;
+    z-index: 1;
+    height: 300px;
+  }
+}
+
+.floating-banner .inner-container .overlay-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-image: url(/img/img_overlay-shadow2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.floating-banner .inner-container .overlay-content .row {
+  position: absolute;
+  bottom: 0px;
+  color: var(--color_2);
+}
+
+.floating-banner .inner-container .overlay-content .row .heading {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.floating-banner .inner-container .overlay-content .row .sub-heading {
+  font-size: 16px;
+  font-weight: 100;
+}

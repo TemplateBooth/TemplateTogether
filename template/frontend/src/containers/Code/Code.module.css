@@ -1,0 +1,179 @@
+.Type span {
+  padding: 10px;
+  background: var(--second);
+  margin: auto;
+  color: var(--third);
+}
+
+.sidebar {
+  background: saddlebrown;
+}
+
+.Type {
+  text-align: center;
+  padding: 20px;
+}
+
+.Description {
+  text-align: center;
+  padding: 20px;
+}
+.Description span {
+  padding: 10px;
+  margin: auto;
+  color: var(--second);
+  border: 2px solid var(--second);
+}
+
+.visual {
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  width: 100%;
+  height: 320px;
+  overflow: scroll;
+}
+
+.visual .container {
+  width: 100%;
+}
+.Code {
+  position: fixed;
+  bottom: 0px;
+  height: 300px;
+  width: 100%;
+  z-index: 2;
+  background: white;
+  padding-top: 5px;
+  border: 2px solid black;
+}
+
+.Code .col {
+  text-align: center;
+}
+.Code .col:not(:last-child) {
+  border-right: 2px solid black;
+}
+
+.Code .col .heading {
+  padding: 5px;
+  display: inline-block;
+  border: 2px solid var(--second);
+}
+.Code .html,
+.css,
+.js {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  overflow: scroll;
+  width: 33.33%;
+  height: 250px;
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.Code .CodeContainer {
+  height: 100%;
+  background: black;
+}
+
+.Code .copy {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  font-size: 14px;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.css {
+  left: 33.33%;
+}
+.js {
+  left: 66.66%;
+}
+
+.colorChange {
+  background: #9f9f9f;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
+.colorChange > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.colorChange > div:not(:last-child) {
+  margin-right: 10px;
+}
+
+/*
+.colorChange .color1 {
+  background-color: var(--color_1);
+}
+.colorChange .color2 {
+  background-color: var(--color_2);
+}
+.colorChange .color3 {
+  background-color: var(--color_3);
+}
+.colorChange .color4 {
+  background-color: var(--color_4);
+}
+.colorChange .color5 {
+  background-color: var(--color_5);
+}
+.colorChange .color6 {
+  background-color: var(--color_6);
+}
+.colorChange .color7 {
+  background-color: var(--color_7);
+}
+
+.colorChange .color8 {
+  background-color: var(--color_8);
+}
+.colorChange .color9 {
+  background-color: var(--color_9);
+}
+.colorChange .color10 {
+  background-color: var(--color_10);
+}
+.colorChange .color11 {
+  background-color: var(--color_11);
+}
+.colorChange .color12 {
+  background-color: var(--color_12);
+}
+.colorChange .color13 {
+  background-color: var(--color_13);
+}
+.colorChange .color14 {
+  background-color: var(--color_14);
+}
+.colorChange .color15 {
+  background-color: var(--color_15);
+}
+.colorChange .color16 {
+  background-color: var(--color_16);
+}
+.colorChange .color17 {
+  background-color: var(--color_17);
+}
+.colorChange .color18 {
+  background-color: var(--color_18);
+}
+
+*/

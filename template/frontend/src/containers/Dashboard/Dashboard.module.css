@@ -1,0 +1,171 @@
+.Heading {
+  text-align: center;
+  margin: 10px 0px;
+  color: var(--third);
+  padding: 15px;
+  background: var(--first);
+}
+.Heading span {
+  padding: 10px;
+  border: 2px solid var(--first);
+  color: var(--first);
+}
+.Profile {
+  margin: auto;
+  width: 80%;
+  margin-top: 50px;
+}
+
+/*image*/
+.User {
+  position: relative;
+}
+.User:hover > .editPhoto {
+  display: block;
+}
+.Save {
+  position: absolute;
+  bottom: 83%;
+  right: 3%;
+  z-index: 5;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: var(--second);
+  padding: 5px;
+  display: none;
+}
+.Save.Active {
+  display: block;
+}
+
+.User .editPhoto {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  background-color: var(--second);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.User .editPhoto span {
+  color: white;
+}
+
+/*end*/
+
+.Profile .Detail {
+}
+
+.Profile .Detail .Item {
+  padding: 10px;
+  color: white;
+  background: var(--first);
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.Profile .Detail .Value {
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--first);
+}
+
+.NotificationContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 244, 238, 0.605);
+  z-index: 8;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.5s ease-in-out;
+}
+.NotificationContainer.Active {
+  transform: translateY(0%);
+}
+.NotificationContainer .cross {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 38px;
+}
+.Notification {
+  padding: 15px;
+  background: var(--first);
+  color: white;
+  text-align: center;
+  width: 80%;
+}
+
+.error {
+  padding: 15px;
+  background: rgb(154, 67, 67);
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*new */
+.LeftBar {
+  position: fixed;
+  top: 70px;
+  width: 22%;
+  left: 0px;
+  height: 100vh;
+  overflow: scroll;
+  background-color: var(--first);
+  border-right: 2px solid var(--third);
+}
+
+.LeftBar .User {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LeftBar .User img {
+  width: 60%;
+  height: 100%;
+  border-radius: 50%;
+}
+.LeftBar .Name {
+  padding: 10px;
+  color: var(--third);
+  text-align: center;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.LeftBar ul {
+  list-style: none;
+  padding: 0px;
+  margin-top: 18px;
+  border-top: 2px solid var(--third);
+}
+.LeftBar ul li {
+  color: var(--third);
+  cursor: pointer;
+  padding: 9px;
+  border-bottom: 2px solid var(--third);
+  border-radius: 0px;
+}
+.LeftBar ul li.Active {
+  background: var(--second);
+}
+
+.RightBar {
+  position: absolute;
+  top: 70px;
+  left: 22%;
+  width: 78%;
+}

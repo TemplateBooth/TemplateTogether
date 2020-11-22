@@ -1,0 +1,58 @@
+.Code {
+  position: fixed;
+  bottom: 0px;
+  height: 300px;
+  width: 100%;
+  z-index: 2;
+  background: white;
+  padding-top: 5px;
+  border: 2px solid black;
+}
+
+.Code .col {
+  text-align: center;
+}
+.Code .col:not(:last-child) {
+  border-right: 2px solid black;
+}
+
+.Code .col .heading {
+  padding: 5px;
+  display: inline-block;
+  border: 2px solid var(--second);
+}
+.Code .html,
+.css,
+.js {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  overflow: scroll;
+  width: 33.33%;
+  height: 250px;
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.Code .CodeContainer {
+  height: 100%;
+  background: black;
+}
+
+.Code .copy {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  font-size: 14px;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.css {
+  left: 33.33%;
+}
+.js {
+  left: 66.66%;
+}

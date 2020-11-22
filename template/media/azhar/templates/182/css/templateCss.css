@@ -1,0 +1,257 @@
+:root{
+--color_1:#706d6d;
+--color_2:#9ceade;
+--color_3:#ee82ee;
+--color_4:#f4f7f6;
+--color_5:#e6e4e4;
+--color_6:#000000;
+--color_7:#56c5b6;
+--color_8:#fefffa;
+--color_9:#727070;
+--color_10:#26252b;
+--color_11:#e9e7e7;
+--color_12:#fcfcfc;
+--color_13:#525453;
+--color_14:#00000080;
+--color_15:#44554455;
+
+}
+
+      .dfdgfg{
+        
+      }
+    
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  
+}
+
+.top-nav {
+  --color: 4px;
+  background-color: var(--color_3);
+  background-color: var(--color_4);
+  height: 10vh;
+  transition: 0.5s;
+  position: relative;
+}
+
+.top-nav .menu-link {
+  width: 130px;
+  border-right: 1px solid var(--color_5);
+}
+.menu-link .menu-icon {
+  width: 50%;
+}
+.top-nav .logo-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vh;
+  width: 200px;
+}
+.logo-link {
+  transition: 0.5s ease;
+}
+.logo-link a {
+  color: var(--color_6);
+  text-decoration: none;
+  font-size: 30px;
+  letter-spacing: 0.0001em;
+  font-weight: 500;
+}
+.top-nav .right-link {
+  position: absolute;
+  right: 0px;
+  width: 370px;
+  height: 10vh;
+}
+
+.right-link {
+  transition: 0.5s ease;
+}
+.right-link a {
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.right-link .register {
+  font-weight: 400;
+}
+.right-link .register a {
+  color: var(--color_6);
+  font-weight: 500;
+}
+.right-link .submit {
+  background-color: var(--color_7);
+  width: 50%;
+}
+.right-link .submit a {
+  color: var(--color_8);
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 992px) {
+  .top-nav .right-link {
+    width: 190px;
+  }
+  .top-nav .right-link .submit {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .top-nav .search-link {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 99;
+  }
+
+  .menu-link {
+    width: 65px !important;
+  }
+}
+.menu-icon > div {
+  height: 2px;
+  width: 15px;
+  background-color: var(--color_6);
+  margin-top: 3px;
+}
+
+.menu-link a {
+  font-size: 12px;
+  color: var(--color_6);
+  text-decoration: none;
+}
+
+.menu-link:hover a {
+  color: var(--color_9);
+}
+
+#links-container {
+  display: flex;
+  transition: 0.5s ease;
+}
+.search-link {
+  display: flex;
+  width: 100px;
+  transition: 0.5s ease;
+}
+.search-link span {
+  font-size: 20px;
+}
+.search-input input {
+  border: none;
+  outline: none;
+  background-color: var(--color_4);
+  padding: 30px;
+  font-size: 13px;
+  font-weight: 100;
+}
+.search-content {
+  display: none;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+.search-input .close-search {
+  width: 90px;
+  text-align: center;
+  background-color: var(--color_10);
+}
+
+/*sidebar */
+
+.sidebar-container {
+}
+
+.sidebar {
+  width: 320px;
+
+  background-color: var(--color_4);
+}
+.sidebar div {
+  height: 70px;
+  padding-left: 35px;
+  padding-top: 22px;
+  border-bottom: 1px solid var(--color_11);
+}
+
+.sidebar .content {
+  font-weight: 600;
+  font-size: 17px;
+}
+.sidebar .content:hover {
+  background-color: var(--color_12);
+}
+.sidebar-header img {
+  height: 35px;
+}
+
+.sidebar-header {
+  position: relative;
+}
+.sidebar-header .close-div {
+  position: absolute;
+  right: 30px;
+  top: 18px;
+}
+.sidebar-header .language {
+  font-size: 12px;
+  color: var(--color_13);
+  text-decoration: underline;
+}
+.sidebar-header .language img {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 100%;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 3;
+  transition: transform 0.5s ease;
+}
+
+/*overlay*/
+
+#overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color_14);
+  z-index: 2;
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+
+        .sfdfdfdf{
+        }
+        nav{
+          color:var(--color_15);
+          
+        }

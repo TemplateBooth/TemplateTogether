@@ -1,0 +1,171 @@
+li {
+  border-radius: 15px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.heading .no {
+  margin-right: 10px;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  padding: 4px 0px;
+  background: var(--second);
+  color: var(--third);
+}
+.heading .type {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.Username {
+  position: absolute;
+  right: 12px;
+  top: 5px;
+  border-radius: 8px;
+  line-height: 1em;
+  background: var(--second);
+  color: var(--third);
+  padding: 5px;
+}
+.description {
+  padding: 10px;
+  margin: 10px 0px;
+  background: var(--first);
+  color: var(--third);
+}
+.description a {
+  color: var(--third);
+}
+
+.ActionSection {
+  display: flex;
+}
+
+.ActionSection .Comments {
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ActionSection .Likes span:first-child {
+  display: inline-block;
+}
+.ActionSection .Likes span:last-child {
+  font-size: 30px;
+}
+
+.ActionSection .Likes .average {
+  margin-right: 10px;
+}
+.CommentInput {
+  display: flex;
+  margin-top: 5px;
+}
+.CommentInput .Input {
+  flex-grow: 1;
+  height: 35px;
+}
+.CommentInput .Input input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--second);
+  outline: none;
+  padding-left: 10px;
+}
+.CommentInput .Button {
+  height: 35px;
+}
+.CommentInput .Button button {
+  height: 100%;
+  border: none;
+  outline: none;
+  background: var(--second);
+  color: var(--third);
+}
+
+.CommentSection {
+  height: 100px;
+  background-color: var(--second);
+  overflow: scroll;
+  padding: 3px 0px;
+  border-radius: 10px;
+}
+
+.CommentSection .Comment {
+  color: var(--first);
+  margin-top: 8px;
+  margin-left: 4px;
+}
+.CommentSection .Comment span {
+  background: var(--third);
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.Feedback {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  text-align: center;
+}
+.RatingChoice {
+  position: absolute;
+  display: flex;
+  bottom: 125%;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.4s ease-in-out;
+}
+
+.RatingChoice.active {
+  opacity: 1;
+  display: block;
+}
+
+.RatingChoice > div > i {
+  font-size: 25px;
+}
+.RatingChoice > div:not(:last-child) {
+  margin-right: 10px;
+}
+
+.RatingChoice > div {
+  transition: 0.5s ease-in-out;
+}
+.RatingChoice > div:hover {
+  transform: scale(1.2);
+}
+.feedHeading {
+  border: 1.5px solid var(--second);
+  padding: 3px;
+  border-radius: 3px;
+  color: var(--third);
+  background: var(--second);
+}
+
+.DeleteTemplate {
+  position: absolute;
+  top: 50%;
+  left: 102%;
+  transform: translateY(-50%);
+}
+
+.DeleteTemplate span {
+  font-size: 30px;
+  color: white;
+}
+
+.DateTime {
+  font-size: 14px;
+}

@@ -1,0 +1,260 @@
+:root{
+--color_1:#706d6d;
+--color_2:#9ceade;
+--color_3:#000044;
+--color_3:#00004400;
+--color_4:#ee82ee;
+--color_5:#f4f7f6;
+--color_6:#e6e4e4;
+--color_7:#000000;
+--color_8:#56c5b6;
+--color_9:#fefffa;
+--color_10:#727070;
+--color_11:#26252b;
+--color_12:#e9e7e7;
+--color_13:#fcfcfc;
+--color_14:#525453;
+--color_15:#00000080;
+--color_16:#4169e1;
+
+}
+
+    :root {
+      
+    }
+
+    .ff {
+      color: var(--color_3)
+    ;}
+  
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  
+}
+
+.top-nav {
+  --color: 4px;
+  background-color: var(--color_4);
+  background-color: var(--color_5);
+  height: 10vh;
+  transition: 0.5s;
+  position: relative;
+}
+
+.top-nav .menu-link {
+  width: 130px;
+  border-right: 1px solid var(--color_6);
+}
+.menu-link .menu-icon {
+  width: 50%;
+}
+.top-nav .logo-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vh;
+  width: 200px;
+}
+.logo-link {
+  transition: 0.5s ease;
+}
+.logo-link a {
+  color: var(--color_7);
+  text-decoration: none;
+  font-size: 30px;
+  letter-spacing: 0.0001em;
+  font-weight: 500;
+}
+.top-nav .right-link {
+  position: absolute;
+  right: 0px;
+  width: 370px;
+  height: 10vh;
+}
+
+.right-link {
+  transition: 0.5s ease;
+}
+.right-link a {
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.right-link .register {
+  font-weight: 400;
+}
+.right-link .register a {
+  color: var(--color_7);
+  font-weight: 500;
+}
+.right-link .submit {
+  background-color: var(--color_8);
+  width: 50%;
+}
+.right-link .submit a {
+  color: var(--color_9);
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 992px) {
+  .top-nav .right-link {
+    width: 190px;
+  }
+  .top-nav .right-link .submit {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .top-nav .search-link {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 99;
+  }
+
+  .menu-link {
+    width: 65px !important;
+  }
+}
+.menu-icon > div {
+  height: 2px;
+  width: 15px;
+  background-color: var(--color_7);
+  margin-top: 3px;
+}
+
+.menu-link a {
+  font-size: 12px;
+  color: var(--color_7);
+  text-decoration: none;
+}
+
+.menu-link:hover a {
+  color: var(--color_10);
+}
+
+#links-container {
+  display: flex;
+  transition: 0.5s ease;
+}
+.search-link {
+  display: flex;
+  width: 100px;
+  transition: 0.5s ease;
+}
+.search-link span {
+  font-size: 20px;
+}
+.search-input input {
+  border: none;
+  outline: none;
+  background-color: var(--color_5);
+  padding: 30px;
+  font-size: 13px;
+  font-weight: 100;
+}
+.search-content {
+  display: none;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+.search-input .close-search {
+  width: 90px;
+  text-align: center;
+  background-color: var(--color_11);
+}
+
+/*sidebar */
+
+.sidebar-container {
+}
+
+.sidebar {
+  width: 320px;
+
+  background-color: var(--color_5);
+}
+.sidebar div {
+  height: 70px;
+  padding-left: 35px;
+  padding-top: 22px;
+  border-bottom: 1px solid var(--color_12);
+}
+
+.sidebar .content {
+  font-weight: 600;
+  font-size: 17px;
+}
+.sidebar .content:hover {
+  background-color: var(--color_13);
+}
+.sidebar-header img {
+  height: 35px;
+}
+
+.sidebar-header {
+  position: relative;
+}
+.sidebar-header .close-div {
+  position: absolute;
+  right: 30px;
+  top: 18px;
+}
+.sidebar-header .language {
+  font-size: 12px;
+  color: var(--color_14);
+  text-decoration: underline;
+}
+.sidebar-header .language img {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 100%;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 3;
+  transition: transform 0.5s ease;
+}
+
+/*overlay*/
+
+#overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color_15);
+  z-index: 2;
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+
+    .sfdfdgP {
+      background-color: var(--color_16);
+    }

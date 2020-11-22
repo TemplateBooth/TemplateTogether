@@ -1,0 +1,94 @@
+.template_list {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.LeftSideBar {
+  width: 20%;
+  background: var(--first);
+  position: fixed;
+  left: 0px;
+  top: 70px;
+  height: 100vh;
+  border-right: 2px solid white;
+}
+.LeftSideBar .Heading {
+  padding: 10px;
+  color: white;
+  font-size: 25px;
+  position: relative;
+}
+
+.LeftSideBar ul {
+  list-style: none;
+  padding: 0px;
+  border-top: 2px solid white;
+}
+
+.LeftSideBar li {
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  border-radius: 0px;
+  border-bottom: 2px solid white;
+}
+.LeftSideBar li.active {
+  background: var(--second);
+  color: var(--third);
+}
+
+.RightSideBar {
+  width: 22%;
+  background: var(--third);
+  position: fixed;
+  right: 0px;
+  top: 70px;
+  height: 100vh;
+  border-left: 2px solid var(--first);
+}
+.RightSideBar .Heading {
+  padding: 10px;
+  color: var(--first);
+  font-size: 25px;
+}
+
+.RightSideBar ul {
+  list-style: none;
+  padding: 0px;
+  border-top: 2px solid var(--first);
+}
+
+.RightSideBar li {
+  cursor: pointer;
+  width: 100%;
+  color: var(--first);
+  padding: 10px;
+  border-radius: 0px;
+  border-bottom: 2px solid var(--first);
+}
+
+.CenterBar {
+  width: 58%;
+  position: absolute;
+  height: 100vh;
+  top: 70px;
+  left: 20%;
+  background: var(--second);
+}
+
+.clearAll {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+.clearAll span {
+  padding: 5px;
+  border: 1px solid var(--third);
+}
+
+.clearAll span.active {
+}

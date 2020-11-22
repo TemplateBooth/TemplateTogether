@@ -1,0 +1,226 @@
+:root{
+--color_1:#000000;
+--color_2:#f0f0f0;
+--color_3:#b6b8b3;
+--color_4:#292828;
+
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  
+  
+  
+}
+/*#b6b8b3*/
+body {
+  margin-top: 9vh;
+  padding: 0px;
+  box-sizing: border-box;
+  background: var(--color_2);
+}
+
+.nav-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 9vh;
+  width: 100%;
+  z-index: 1;
+}
+.top-nav {
+  height: 100%;
+  position: relative;
+  background: var(--color_1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  align-items: center;
+}
+.top-nav .logo-container {
+  color: var(--color_2);
+  font-size: 22px;
+  letter-spacing: 0.2em;
+}
+.top-nav .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  margin: 0px;
+}
+
+.top-nav .nav-links li {
+  height: 100%;
+  transition: background 0.3s ease;
+  border-radius: 7px;
+  width: 140px;
+  text-align: center;
+  border: 2px solid var(--color_2);
+}
+.top-nav .nav-links li.active {
+  background: var(--color_2);
+}
+.top-nav .nav-links li.active > a {
+  color: var(--color_1);
+}
+.top-nav .nav-links li:hover {
+  background: var(--color_2);
+}
+.top-nav .nav-links li:hover > a {
+  color: var(--color_1);
+}
+.top-nav .nav-links li:not(:last-child) {
+  margin-right: 20px;
+}
+.top-nav .nav-links li a {
+  font-size: 20px;
+  display: inline-block;
+  padding: 3px 8px;
+  text-decoration: none;
+  color: var(--color_2);
+}
+.top-nav .right-container {
+  display: flex;
+}
+.search-content {
+  transition: opacity 0.3s ease-in-out;
+}
+.search-link {
+  display: flex;
+  width: 70px;
+  transition: 0.5s ease;
+}
+.search-link span {
+  font-size: 20px;
+  color: var(--color_2);
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  background-color: var(--color_1);
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0.2em;
+  color: var(--color_2);
+}
+.search-input input::placeholder {
+  color: var(--color_2);
+}
+.search-content {
+  display: none;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+.search-input .close-search {
+  height: 80%;
+  width: 60px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--color_3);
+}
+
+.top-nav .right-container .account a {
+  color: var(--color_2);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .top-nav .nav-links li {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .top-nav {
+    padding: 0px 10px;
+  }
+  .top-nav .nav-links li {
+    margin-right: 0px;
+    width: auto;
+    border: 0px;
+  }
+  .top-nav .nav-links li a {
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+
+/*banner 1*/
+.banner1 {
+  position: relative;
+  height: 91vh;
+}
+
+.banner1 .bottom-vector {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.banner1 .bottom-vector img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner1 .banner-details .heading {
+  font-size: 44px;
+  line-height: 1em;
+  font-weight: 600;
+  color: var(--color_1);
+}
+.banner1 .banner-details .sub-heading {
+  font-size: 25px;
+  line-height: 1em;
+
+  color: var(--color_4);
+}
+.banner1 .banner-details .examples a {
+  font-size: 22px;
+  color: var(--color_2);
+  background: var(--color_1);
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/*banner 2*/
+.banner2 {
+  background: var(--color_1);
+}
+
+.banner2 .features {
+}
+.banner2 .features [class*="col-"] {
+  font-size: 30px;
+  line-height: 1em;
+}
+
+.banner2 .features [class*="col-"] .text-container {
+  border: 2px solid var(--color_2);
+  border-radius: 20px;
+  background: var(--color_2);
+  color: var(--color_1);
+}
+.banner2 .up-heading {
+  color: var(--color_2);
+  font-size: 35px;
+  line-height: 1em;
+}
+.banner2 .down-heading {
+  color: var(--color_2);
+  font-size: 35px;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+}
