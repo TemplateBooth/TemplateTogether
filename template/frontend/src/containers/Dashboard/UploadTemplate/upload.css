@@ -43,7 +43,8 @@
   }
   #d1,
   #d2,
-  #d3 {
+  #d3,
+  #d4{
     border: 2px dashed #ccc;
     border-radius: 20px;
     width: 30%;
@@ -57,7 +58,8 @@
   }
   #d1.highlight,
   #d2.highlight,
-  #d3.highlight {
+  #d3.highlight,
+  #d4.highlight{
     border-color: #6ccaf3;
   }
   
@@ -94,7 +96,8 @@
   
   #htmlFile,
   #cssFile,
-  #jsFile {
+  #jsFile,
+  #mediaFile{
     display: none;
   }
   #upload-span {

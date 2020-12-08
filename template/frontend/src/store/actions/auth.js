@@ -125,7 +125,7 @@ export const setAuthState = () => {
 }
 
 
-export const uploadTemplate = (template_type,description,htmlFile,cssFile,jsFile,colors) => {
+export const uploadTemplate = (template_type,description,htmlFile,cssFile,jsFile,mediaFile,colors) => {
     return (dispatch,getState) => {                       
 
        
@@ -146,7 +146,24 @@ export const uploadTemplate = (template_type,description,htmlFile,cssFile,jsFile
             fd.append('jsFile',jsFile,jsFile.name);
         }
 
-
+        console.log("----mediafile---",mediaFile)
+        if (mediaFile!=null){
+            for(let i=0;i<mediaFile.length;i++){
+                var fileName = mediaFile[i].name
+                var fileExtension = fileName.split('.').pop();
+                if(htmlFile==null && fileExtension=='html'){
+                  fd.append('htmlFile',mediaFile[i]);
+                }
+                if(cssFile==null && fileExtension=='css'){
+                    fd.append('cssFile',mediaFile[i]);
+                  }
+                if(jsFile==null && fileExtension=='js'){
+                fd.append('jsFile',mediaFile[i]);
+                }
+                fd.append('mediaFiles',mediaFile[i]);
+            }
+        }
+        console.log("---fd---",fd)
         axios.post("templates/auth/create/",fd,tokenConfig(getState))
         .then(res => {
             console.log(res);
@@ -170,6 +187,9 @@ export const uploadTemplate = (template_type,description,htmlFile,cssFile,jsFile
             
             
         })
+
+  
+       
     }
 }
 

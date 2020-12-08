@@ -118,6 +118,7 @@ class UploadTemplate extends Component {
         this.drop1 = React.createRef();
         this.drop2 = React.createRef();
         this.drop3 = React.createRef();
+        this.drop4 = React.createRef();
     }
 
     state = {
@@ -126,6 +127,7 @@ class UploadTemplate extends Component {
         htmlFile: null,
         cssFile: null,
         jsFile: null,
+        mediaFile:[],
         colors: 0,
         dragging: false,
     }
@@ -134,6 +136,8 @@ class UploadTemplate extends Component {
         let div1 = this.drop1.current
         let div3 = this.drop3.current
         let div2 = this.drop2.current
+        let div4 = this.drop4.current
+
         console.log(div2)
         div1.addEventListener('dragenter', this.handleDragIn)
         div1.addEventListener('dragleave', this.handleDragOut)
@@ -149,11 +153,17 @@ class UploadTemplate extends Component {
         div3.addEventListener('dragleave', this.handleDragOut)
         div3.addEventListener('dragover', this.handleDrag)
         div3.addEventListener('drop', this.handleDrop)
+
+        div4.addEventListener('dragenter', this.handleDragIn)
+        div4.addEventListener('dragleave', this.handleDragOut)
+        div4.addEventListener('dragover', this.handleDrag)
+        div4.addEventListener('drop', this.handleDrop)
     }
     componentWillUnmount() {
         let div1 = this.drop1.current
         let div3 = this.drop3.current
         let div2 = this.drop2.current
+        let div4 = this.drop4.current
         div1.removeEventListener('dragenter', this.handleDragIn)
         div1.removeEventListener('dragleave', this.handleDragOut)
         div1.removeEventListener('dragover', this.handleDrag)
@@ -168,6 +178,11 @@ class UploadTemplate extends Component {
         div3.removeEventListener('dragleave', this.handleDragOut)
         div3.removeEventListener('dragover', this.handleDrag)
         div3.removeEventListener('drop', this.handleDrop)
+
+        div4.removeEventListener('dragenter', this.handleDragIn)
+        div4.removeEventListener('dragleave', this.handleDragOut)
+        div4.removeEventListener('dragover', this.handleDrag)
+        div4.removeEventListener('drop', this.handleDrop)
     }
     handleDrag = (e) => {
         e.preventDefault()
@@ -204,13 +219,29 @@ class UploadTemplate extends Component {
         e.stopPropagation()
         console.log('handleDrop', e)
         console.log(e.target.childNodes[0].childNodes[1].id)
-        // console.log(e.target.files)
+        console.log("e---------TARGTE",e.target)
 
         if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-            this.setState({
-                ...this.state,
-                [e.target.childNodes[0].childNodes[1].id]: e.dataTransfer.files[0]
-            })
+            if(e.target.childNodes[0].childNodes[1].id==='mediaFile'){
+                // let dop = []
+                // console.log(typeof dop)
+                // let obj = e.dataTransfer.files
+                // let keys = Object.keys(obj)
+                // for(let i in keys){
+                // dop.push(obj[i])
+                // }
+                // console.log(typeof dop,"fmmmmmmmmm",e.dataTransfer.files)
+                this.setState({
+                    ...this.state,
+                    [e.target.childNodes[0].childNodes[1].id]: e.dataTransfer.files
+                })
+            }else{
+                this.setState({
+                    ...this.state,
+                    [e.target.childNodes[0].childNodes[1].id]: e.dataTransfer.files[0]
+                })
+            }
+           
             this.addingHighlight(e);
             const div = document.createElement('div')
             div.innerHTML = `<span id="upload-span" style="padding-right:30px">${e.dataTransfer.files[0].name}</span>`
@@ -229,13 +260,31 @@ class UploadTemplate extends Component {
         e.preventDefault();
         e.stopPropagation();
         console.log(e)
-        this.setState({
-            ...this.state,
-            [e.target.id]: e.target.files[0]
-        })
-        // console.log(e.target.files[0]);
+        if(e.target.id==='mediaFile'){
+            // let dop = []
+            // console.log(typeof dop)
+            // let obj = e.target.files 
+            // let keys = Object.keys(obj)
+            // for(let i in keys){
+            //     dop.push(obj[i])
+            // }
+            // console.log(typeof dop,"fmmmmmmmmm",dop)
+            this.setState({
+                ...this.state,
+                [e.target.id]: e.target.files 
+            })
+        }else{
+            this.setState({
+                ...this.state,
+                [e.target.id]: e.target.files[0]
+            })
+        }
+       
+        console.log("target values---------",e.target.files);
         const div = document.createElement('div')
-        div.innerHTML = `<span id="upload-span" style="padding-right:30px">${e.target.files[0].name}</span>`
+        div.innerHTML =  `<span id="upload-span" style="padding-right:30px">${
+            e.target.files[0].name
+        }</span>`
         console.log(e)
         // console.log(e.target)
         // console.log(e.target.lastElementChild.childNodes[e.target.lastElementChild.childNodes.length-1].tagName);
@@ -265,6 +314,10 @@ class UploadTemplate extends Component {
 
             this.drop3.current.classList.value = "highlight";
         }
+        if (e.target.id === "d4" || e.target.id === "mediaFile") {
+
+            this.drop4.current.classList.value = "highlight";
+        }
 
     }
     removingHighlight = (e) => {
@@ -283,6 +336,10 @@ class UploadTemplate extends Component {
         if (e.target.id === "d3" || e.target.id === "jsFile") {
 
             this.drop3.current.classList.value = "";
+        }
+        if (e.target.id === "d4" || e.target.id === "mediaFile") {
+
+            this.drop4.current.classList.value = "";
         }
     }
     onChangeHandler = (e) => {
@@ -315,8 +372,10 @@ class UploadTemplate extends Component {
 
     onSubmitHandler = (e) => {
         e.preventDefault();
-        const { templateType, description, htmlFile, cssFile, jsFile, colors } = this.state;
-        this.props.uploadTemplate(templateType, description, htmlFile, cssFile, jsFile, colors);
+        const { templateType, description, htmlFile, cssFile, jsFile,mediaFile, colors } = this.state;
+        console.log("submit-handler" ,mediaFile)
+
+        this.props.uploadTemplate(templateType, description, htmlFile, cssFile, jsFile,mediaFile, colors);
     }
 
 
@@ -334,7 +393,7 @@ class UploadTemplate extends Component {
 
             <div className={classes.UploadTemplate}>
 
-                <form onSubmit={this.onSubmitHandler} className={classes.Form}>
+                <form onSubmit={this.onSubmitHandler} className={classes.Form} encType="multipart/form-data">
                     <div className={classes.Heading}>
                         Upload Template!
                 </div>
@@ -397,6 +456,13 @@ class UploadTemplate extends Component {
                                     <label className="button" for="jsFile"><figure><svg xmlns="http://www.w3.org/2000/svg" width="12" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg></figure></label>
                                 </div>
                             </div>
+                            <div ref={this.drop4} id="d4">
+                                <div className="myForm">
+                                    <p>Choose Media File Folder or Drag And Drop them</p>
+                                    <input className="yelo y4" type="file" id="mediaFile" multiple accept="files/*" onChange={this.onFileChangeHandler} />
+                                    <label className="button" for="mediaFile"><figure><svg xmlns="http://www.w3.org/2000/svg" width="12" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg></figure></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="form-group">
@@ -415,7 +481,7 @@ class UploadTemplate extends Component {
 
 export const mapDispatchToProps = (dispatch) => {
     return {
-        uploadTemplate: (templateType, description, htmlFile, cssFile, jsFile, colors) => dispatch(actionCreators.uploadTemplate(templateType, description, htmlFile, cssFile, jsFile, colors)),
+        uploadTemplate: (templateType, description, htmlFile, cssFile, jsFile,mediaFile, colors) => dispatch(actionCreators.uploadTemplate(templateType, description, htmlFile, cssFile, jsFile,mediaFile, colors)),
     }
 }
 export default connect(null, mapDispatchToProps)(UploadTemplate);

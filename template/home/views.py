@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
 # Create your views here.
-from .serializers import TemplateSerializer, ComponentSerializer, RatingSerializer, CommentSerializer,TemplateUploadSerializer, ProfileSerializer
-from .models import Template, Comment, Component, Rating
+from .serializers import TemplateSerializer, ComponentSerializer, RatingSerializer, CommentSerializer,TemplateUploadSerializer, ProfileSerializer,TemplateFileSerializer
+from .models import Template, Comment, Component, Rating,TemplateMediaFile
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -19,6 +19,8 @@ from bs4 import BeautifulSoup
 import re 
 from django.core.files import File
 from collections import OrderedDict
+
+
 
 class HomeView(TemplateView):
     template_name = 'index.html'
@@ -73,22 +75,32 @@ class UserTemplatesView(generics.ListAPIView):
             print(query.rating)
         return queryset
 
-class TemplateCreateview(generics.CreateAPIView):
+class TemplateCreateview(generics.ListCreateAPIView):
     
-    permission_classes = [
-        permissions.IsAuthenticated
-    ]
-
+    # permission_classes = [
+    #     permissions.IsAuthenticated
+    # ]
     queryset = Template.objects.all()
     serializer_class = TemplateUploadSerializer
-    
+   
+        
     def perform_create(self,serializer):
+        print("---------------------------------",serializer)
+        mediaFiles=serializer.context.get('view').request.FILES.getlist('mediaFiles')
+        print("---------mediafiles-----",mediaFiles)
         data = serializer.validated_data
+        data['mediaFiles']=mediaFiles
         file_dict = data.copy()
         htmlFile = None
         cssFile = None
         jsFile = None
-
+        mediaFiles = None
+       
+        # print()
+   
+        print("*******1**",serializer.is_valid())
+        print("*******2********",data)
+        # print("--------queryset-----",Template.objects.all())
         if 'htmlFile' in data:
             htmlFile = data['htmlFile']
             del data['htmlFile']
@@ -98,14 +110,31 @@ class TemplateCreateview(generics.CreateAPIView):
         if 'jsFile' in data:
             jsFile = data['jsFile']
             del data['jsFile']
-
+        if 'mediaFiles' in data:
+            mediaFiles = data['mediaFiles']
+            del data['mediaFiles']
         
- 
+
+        print("//////////////start/////////")
         CustomSerializer = TemplateUploadSerializer(data=data)
+        print("//////////////end/////////",CustomSerializer)
+
+
         if CustomSerializer.is_valid():
             template = CustomSerializer.save(user=self.request.user)
-        
+            print("-----template---",template)
+      
+        # files_data = self.context.get('view').request.FILES.getlist('mediaFiles')
+        print('filesss',mediaFiles)
+        # template_Id = Template.objects.latest('created_at')
+       
+        # print("-------template id------",template_Id)
+        for filez in mediaFiles:
+            print('filez',filez)
+            TemplateMediaFile.objects.create(template_Id=template, mediaFiles=filez)
+            
         newSerializer = TemplateUploadSerializer(template, data=file_dict)
+        print("------newSerializer =>---------------- ",newSerializer)
         if newSerializer.is_valid():
             print("dfd")
             t = newSerializer.save()    
@@ -179,9 +208,9 @@ class TemplateCreateview(generics.CreateAPIView):
 
 
             newHtml = str(soup)
-            print("newHtml",newHtml)
-            print("newCss",newCss)
-            print("newJs",newJs)
+            # print("newHtml",newHtml)
+            # print("newCss",newCss)
+            # print("newJs",newJs)
 
 
         if newCss != '' and latest_template.cssFile == '':
@@ -221,10 +250,125 @@ class TemplateCreateview(generics.CreateAPIView):
 
 
         #images and videos parsing
+      
+        # HTML_file = open("color.html","r")
+        # CSS_file = open("./gallery_style.css","r")
 
+        # changedHtmlFile = open("changedFolder/onefixed.html", 'w')
+        # changedCssFile = open("changedFolder/css/onfixed.css",'w')
+        # data = HTML_file.read()
+        print("---path----",settings.EX_DIR+"/media"+latest_template.user.username+"/templates/"+str(latest_template.id)+"/templateMediafiles/")
+        elements = newHtml.replace("'",'"')
 
+        meida_file_link_path = "http://localhost:8002/media/"+latest_template.user.username+"/templates/"+str(latest_template.id)+"/templateMediafiles/"
 
+        # elements = elements.split('')
+        elements = elements.split('>')
+        newHtml = ""
+        for el in range(len(elements)):
+            line = elements[el]
+            line_length = len(line)
+            # print(line_length)
+            index = 0
+            counter=0
+            sampletext1=''
+            sampletext2=''
+            while index!=-1:
                 
+                index = line.find('url(',index+1,line_length)
+                if index!=-1:
+                    sampletext1+=line[counter:index+4]
+                else:
+                    # print(line.strip()[:4])
+                    # print(len(line.strip()[:4]))
+                    if line.strip()[:4] == "<img" or line.strip()[:6] == "<video" or line.strip()[:7] == "<source":
+                        srcIndex = line.find('src')
+                        start = line.find('"',srcIndex+1,line_length)
+                        end = line.find('"',start+1,line_length)
+                        # print(line[start+1:end])
+                        sampletext1+=line[:start+1]
+                        srcLink = line[start+1:end]
+                        linkIndex = srcLink.rfind('/')
+                        if linkIndex!=-1:
+                            srcLink=srcLink[linkIndex+1:end]
+
+                        print("----srcLink-------",srcLink)
+
+                        sampletext1+= meida_file_link_path + srcLink.replace(' ','_')
+                        sampletext1+=line[end:line_length]
+                        # print('src tag')
+                    else:
+                        sampletext1+=line[counter:line_length]
+                # elif counter>0 and index!=-1:
+                #     sampletext1+
+                if index!=-1:
+                    
+                    for i in range(index+4,line_length):
+                        if line[i]==')':
+                            break
+                    feel = line[index+4:i].replace('"',"")
+                    feelIndex = feel.rfind('/')
+                    if feelIndex!=-1:
+                        feel=feel[feelIndex+1:]
+
+                    print("---feel--",feel)
+                    # feel="'AZHARAHmed.jpg'"
+                    counter=i
+                    sampletext1+="'"+meida_file_link_path+feel+"'"
+
+                    # print(feel)
+                # print(index)
+            if(sampletext1.strip()!=''):
+                sampletext1=sampletext1+'>'
+            # print(sampletext1)
+            newHtml+=sampletext1
+
+        # print(newhtml)
+        # changedHtmlFile.write(newhtml)
+
+        # cssData = CSS_file.read()
+        # print("css File",cssData)
+
+        cssElements = newCss.split('}')
+        cssElementslength = len(cssElements)
+
+        newCss= ""
+        for el in range(cssElementslength):
+            css_line = cssElements[el]
+            css_line_length = len(css_line)
+            # print(css_line_length)
+            cssindex = 0
+            counter=0
+            sampletext1=''
+            sampletext2=''
+            while cssindex!=-1:
+                
+                cssindex = css_line.find('url(',cssindex+1,css_line_length)
+                if cssindex!=-1:
+                    sampletext1+=css_line[counter:cssindex+4]
+                else:
+                    sampletext1+=css_line[counter:css_line_length]
+                # elif counter>0 and cssindex!=-1:
+                #     sampletext1+
+                if cssindex!=-1:
+                    
+                    for i in range(cssindex+4,css_line_length):
+                        if css_line[i]==')':
+                            break
+                    # feel = css_line[cssindex+4:i].replace('"',"'")
+                    feel="'Image'"
+                    counter=i
+                    sampletext1+=feel
+
+                    # print(feel)
+                # print(cssindex)
+            print(sampletext1.replace(' ',''))
+            if(sampletext1.strip()!=''):
+                sampletext1=sampletext1+'}'
+            # print(sampletext1)
+            newCss+=sampletext1
+
+        # changedCssFile.write(newCss)
 
         if latest_template.htmlFile != '':
             htmlConverter(settings.EX_DIR + latest_template.htmlFile.url,newHtml).convert()

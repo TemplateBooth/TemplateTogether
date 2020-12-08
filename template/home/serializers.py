@@ -1,7 +1,12 @@
 from rest_framework import serializers
+from django.core.serializers.json import DjangoJSONEncoder
 from django.contrib.auth.models import User
-
-from .models import Profile, Template, Component, Comment, Rating
+from django.forms.fields import FileField
+from django.forms import ClearableFileInput
+import json
+# import demjson
+# from django.forms.fields import FileField
+from .models import Profile, Template, Component, Comment, Rating,TemplateMediaFile
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,10 +20,34 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id','username','email']
 
 
+    
+class TemplateFileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TemplateMediaFile
+        fields = ('mediaFiles',)
+            
+
 class TemplateUploadSerializer(serializers.ModelSerializer):
+    mediaFiles = TemplateFileSerializer(source='templatemediafile_set', many=True,read_only=True)
     class Meta:
         model = Template
-        fields = '__all__'
+        fields = ('id','user','template_type','description','htmlFile','cssFile','cssFile','jsFile','noOfViews','colors','avgRating','uploaded_at','mediaFiles')
+
+    # def create(self, validated_data):
+
+    #     if 'mediaFiles' in validated_data:
+    #         files_data = self.context.get('view').request.FILES.getlist('mediaFiles')
+    #         print('filesss',files_data)
+    #         template_Id = Template.objects.latest('created_at')
+    #         for filez in files_data:
+    #             print('filez',filez)
+    #             TemplateMediaFile.objects.create(template_Id=template_Id, mediaFiles=filez)
+    #         return template_Id
+   
+
+
+
+
 
 
 class TemplateSerializer(serializers.ModelSerializer):

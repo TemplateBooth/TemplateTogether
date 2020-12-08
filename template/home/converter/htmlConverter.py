@@ -167,11 +167,12 @@ class htmlConverter:
 					j = j+2
 				else:
 					newHtml += word
-					j = j+1
+					
 					word = word.replace(" ", "")
 
-					if len(words) != 1 and word != '/' and word != '\n/' and word != '\n' and word != '':  # appending "
+					if len(words) != 1 and word != '/' and word != '\n/' and word != '\n' and j!=(len(words)-1):  # appending "
 						newHtml += '"'
+					j = j+1
 			i = i+1
 			print('>')
 

@@ -37,6 +37,10 @@ def get_css_path(instance, filename):
 def get_js_path(instance, filename):
     return '%s/templates/%d/js/%s' % (instance.user.username,instance.id,'templateJs.js')
 
+def get_file_path(instance,filename):
+    print("---filename----",filename)
+    print("---instance-------",instance.template_Id.id,"---",instance.template_Id.user.username)
+    return '%s/templates/%d/templateMediafiles/%s' % (instance.template_Id.user.username,instance.template_Id.id,filename)
 
 class Template(models.Model):
     user = models.ForeignKey(User,related_name="templates",on_delete=models.CASCADE, null=True)
@@ -49,7 +53,12 @@ class Template(models.Model):
     colors = models.IntegerField(default=0,null=True,blank=True)
     avgRating = models.IntegerField(default=0,null=True,blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    def save(self, *args, **kwargs):
+        super(Template, self).save(*args, **kwargs)
 
+class TemplateMediaFile(models.Model):
+    template_Id = models.ForeignKey(Template,on_delete=models.CASCADE)
+    mediaFiles = models.FileField(upload_to=get_file_path , blank=True , null =True)
 
 
 class Component(models.Model):
