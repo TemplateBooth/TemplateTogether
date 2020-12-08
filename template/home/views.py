@@ -25,6 +25,8 @@ from collections import OrderedDict
 class HomeView(TemplateView):
     template_name = 'index.html'
 
+
+
 @api_view(['GET'])
 def APIView(request):
     if request.method == "GET":
@@ -38,10 +40,9 @@ def APIView(request):
                         'create-rating':reverse('rating-create',request=request),
                 
                         })
-
+                        
 
 class TemplateView(generics.ListAPIView):
-
     serializer_class = TemplateSerializer
 
     def get_queryset(self):
