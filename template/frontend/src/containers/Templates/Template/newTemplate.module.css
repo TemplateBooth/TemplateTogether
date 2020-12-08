@@ -1,0 +1,437 @@
+.templateContainer {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+}
+
+.templateContainer .heading {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.templateContainer .heading .topHeading {
+  display: flex;
+}
+
+.templateContainer .heading .topHeading .image {
+  border-radius: 50%;
+  border: 3px solid rgb(172, 172, 172);
+  display: flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.templateContainer .heading .topHeading .image img {
+  width: 100%;
+  border-radius: 50%;
+}
+.templateContainer .heading .topHeading .typeTime {
+  flex-grow: 1;
+  padding: 0px 0px 0px 12px;
+}
+
+.templateContainer .heading .topHeading .typeTime .type {
+  font-size: 30px;
+  color: white;
+}
+
+.templateContainer .heading .topHeading .typeTime .type .uploadTime {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 3px 0px 3px 3px;
+  color: white;
+}
+
+.templateContainer .heading .topHeading .typeTime .time .username {
+  font-size: 18px;
+  line-height: 1.6em;
+  color: rgb(0, 0, 0);
+  background-color: rgb(177, 177, 177);
+  padding: 0px 3px;
+  border-radius: 10px;
+}
+.templateContainer .heading .topHeading .saveRating {
+  display: flex;
+
+  flex-direction: column;
+}
+.templateContainer .heading .topHeading .saveRating .options {
+  display: flex;
+}
+.templateContainer .heading .topHeading .saveRating .options > div {
+  height: 5px;
+  width: 5px;
+  background-color: white;
+  border-radius: 50%;
+}
+.templateContainer
+  .heading
+  .topHeading
+  .saveRating
+  .options
+  > div:not(:last-child) {
+  margin-right: 2px;
+}
+.templateContainer .heading .topHeading .saveRating .save {
+  align-self: flex-start;
+}
+.templateContainer .heading .topHeading .saveRating .save span {
+  color: white;
+  font-size: 20px;
+}
+.templateContainer .heading .topHeading .saveRating .rating {
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  position: relative;
+  margin-right: 15px;
+}
+
+.templateContainer .heading .topHeading .saveRating .rating .stars {
+  position: absolute;
+  top: 5px;
+  left: 100%;
+  font-size: 15px;
+}
+
+.templateContainer .heading .description {
+  color: rgba(227, 226, 226, 0.927);
+  padding: 14px 0px;
+  font-family: sans-serif;
+}
+
+.templateContainer .content {
+  height: 300px;
+}
+.templateContainer .content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.templateContainer .noOfComments {
+  display: flex;
+  padding: 8px;
+}
+
+.templateContainer .noOfComments .commentShare {
+  flex-grow: 1;
+  color: white;
+}
+
+.templateContainer .noOfComments .commentShare .no {
+  font-size: 20px;
+}
+
+.templateContainer .noOfComments .save .saveSpan {
+}
+
+.templateContainer .noOfComments .save .savedSpan {
+  display: none;
+}
+
+.templateContainer .noOfComments .save span {
+  color: white;
+  font-size: 18px;
+}
+
+.templateContainer .noOfComments .save {
+  position: relative;
+}
+
+.templateContainer .noOfComments .save .saveTip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10%);
+  background-color: white;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  display: none;
+}
+
+.templateContainer .noOfComments .save .saveTip.active {
+  display: block;
+  animation: fade_up 0.3s forwards;
+}
+
+.templateContainer .noOfComments .save .saveTip::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%; /* To the right of the tooltip */
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+.templateContainer .addons {
+  display: flex;
+  color: white;
+  padding: 0px 0px 5px 0px;
+}
+
+.templateContainer .addons > div {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0px 5px;
+}
+.templateContainer .addons .share {
+  position: relative;
+}
+
+.templateContainer .addons .share .shareOptions {
+  position: absolute;
+  bottom: 140%;
+  padding: 5px;
+  z-index: 3;
+  background-color: white;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15%);
+  border-radius: 10px;
+  display: none;
+}
+.templateContainer .addons .share .shareOptions.active {
+  display: block;
+  animation: fade_up 0.3s forwards;
+}
+@keyframes fade_up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0%);
+  }
+}
+
+.templateContainer .addons .share .shareOptions::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%; /* To the right of the tooltip */
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.templateContainer .addons .share .shareOptions .listItem {
+  padding: 5px;
+  color: black;
+  text-align: left;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.templateContainer .addons .share .shareOptions .listItem:hover {
+  background-color: black;
+  color: white;
+}
+
+.templateContainer .addons .share .shareOptions .listItem span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 22px;
+  width: 20px;
+}
+.templateContainer .addons .share .shareOptions .listItem:not(:last-child) {
+}
+
+.templateContainer .addons button {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.templateContainer .addons button .symbol {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.templateContainer .userComment {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+.templateContainer .userComment .image {
+  width: 48px;
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(244, 249, 0);
+}
+.templateContainer .userComment .image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.templateContainer .userComment .comment {
+  flex-grow: 1;
+  padding: 0px 0px 0px 10px;
+}
+
+.templateContainer .userComment .comment .commentContainer {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.templateContainer .userComment .comment input {
+  width: 100%;
+  height: 36px;
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  font-size: 17px;
+  color: black;
+}
+
+.templateContainer .userComment .comment input::placeholder {
+  color: black;
+}
+
+.templateContainer .allComments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.templateContainer .allComments .commentsContainer {
+  width: 100%;
+  max-height: 200px;
+  overflow: scroll;
+  padding: 8px;
+}
+
+.templateContainer .allComments .commentsContainer.active {
+  transform: translateY(0%);
+}
+
+.templateContainer .allComments .commentsContainer .singleComment {
+  display: flex;
+}
+
+.templateContainer
+  .allComments
+  .commentsContainer
+  .singleComment:not(:first-child) {
+  margin-top: 5px;
+}
+.templateContainer .allComments .commentsContainer .singleComment .image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.templateContainer .allComments .commentsContainer .singleComment .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.templateContainer .allComments .commentsContainer .singleComment .textComment {
+  padding-left: 10px;
+}
+
+.templateContainer
+  .allComments
+  .commentsContainer
+  .singleComment
+  .textComment
+  .wrapper {
+  background-color: rgb(222, 222, 222);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.templateContainer
+  .allComments
+  .commentsContainer
+  .singleComment
+  .textComment
+  .wrapper
+  span {
+  display: block;
+}
+
+.templateContainer
+  .allComments
+  .commentsContainer
+  .singleComment
+  .textComment
+  .wrapper
+  .name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.templateContainer
+  .allComments
+  .commentsContainer
+  .singleComment
+  .textComment
+  .wrapper
+  .message {
+  font-size: 15px;
+}
+
+/*loading*/
+.ldsRing {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.ldsRing.active {
+  transform: translateY(0%);
+}
+
+.ldsRing div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin: 8px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  animation: ldsRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.ldsRing div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.ldsRing div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.ldsRing div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes ldsRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
